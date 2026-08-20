@@ -1,0 +1,12 @@
+import { ArrowRight, Box, Check, LayoutDashboard, ShieldCheck, Store } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import Brand from '../components/Brand'
+
+export default function Home() {
+  return <main className="landing">
+    <nav><Brand /><div className="nav-actions"><Link to="/login">Войти</Link><Link className="button small" to="/register">Стать продавцом <ArrowRight size={16} /></Link></div></nav>
+    <section className="hero"><div className="eyebrow"><span /> Кабинет для локального бизнеса</div><h1>Ваш магазин.<br /><em>Ваши правила.</em></h1><p>Создайте магазин, добавьте товары и начните развивать своё дело — в одном понятном пространстве.</p><div className="hero-actions"><Link className="button" to="/register">Открыть магазин <ArrowRight size={18} /></Link><Link className="text-link" to="/login">Уже есть аккаунт</Link></div><div className="trust"><ShieldCheck size={19} /><span>Без комиссии на старте</span><i /><Check size={18} /><span>Настройка за 5 минут</span></div></section>
+    <section className="preview"><div className="glow" /><div className="mock"><aside><div className="mock-logo">М</div>{[LayoutDashboard, Store, Box].map((Icon, i) => <div className={i === 0 ? 'active' : ''} key={i}><Icon size={19} /></div>)}</aside><div className="mock-content"><div className="mock-top"><div><small>ДОБРО ПОЖАЛОВАТЬ</small><strong>Мой магазин</strong></div><button>+ Добавить товар</button></div><div className="stats"><div><small>Товаров</small><b>24</b><span>↑ 3 за неделю</span></div><div><small>Активных</small><b>21</b><span>87% ассортимента</span></div><div><small>Остаток</small><b>148</b><span>единиц товара</span></div></div><div className="fake-list"><header><b>Последние товары</b><small>Все товары →</small></header>{['Шоппер «Орнамент»', 'Керамическая пиала', 'Свеча «Арча»'].map((name, i) => <div className="fake-row" key={name}><span className={`thumb t${i}`} /><b>{name}</b><small>{['1 490 сом', '890 сом', '650 сом'][i]}</small><i>В наличии</i></div>)}</div></div></div></section>
+    <section className="steps"><div><small>ВСЁ НЕОБХОДИМОЕ</small><h2>От идеи до первого товара</h2></div>{[['01', 'Создайте аккаунт', 'Только имя, почта и пароль.'], ['02', 'Оформите магазин', 'Название, адрес и короткое описание.'], ['03', 'Добавьте товары', 'Цена, остаток и статус — всё под рукой.']].map(step => <article key={step[0]}><span>{step[0]}</span><h3>{step[1]}</h3><p>{step[2]}</p></article>)}</section>
+  </main>
+}
