@@ -1,10 +1,10 @@
 # Manas Market — React + Vite
 
-Рабочий кабинет продавца на JavaScript/JSX: Supabase Auth, регистрация, создание одного магазина и управление товарами. Продажи и публичный каталог намеренно не включены.
+Рабочий кабинет продавца на JavaScript/JSX: Supabase Auth, регистрация, создание одного магазина, управление товарами и быстрая фиксация продаж. Публичный каталог намеренно не включён.
 
 ## Запуск
 
-1. Создайте проект Supabase и выполните `supabase/migrations/001_initial_seller_schema.sql` в SQL Editor.
+1. Создайте проект Supabase и по порядку выполните `supabase/migrations/001_initial_seller_schema.sql`, затем `supabase/migrations/002_sales.sql` в SQL Editor.
 2. Скопируйте `.env.example` в `.env.local` и заполните `VITE_SUPABASE_URL` и `VITE_SUPABASE_ANON_KEY`.
 3. Установите зависимости и запустите Vite:
 

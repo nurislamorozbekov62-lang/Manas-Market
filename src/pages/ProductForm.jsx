@@ -19,6 +19,7 @@ export default function ProductForm() {
       name: String(form.get('name')).trim(),
       description: String(form.get('description')).trim() || null,
       price: Number(form.get('price')),
+      purchase_price: form.get('purchase_price') === '' ? null : Number(form.get('purchase_price')),
       stock: Number(form.get('stock')),
       is_active: form.get('is_active') === 'on',
     })
